@@ -1,32 +1,36 @@
 package com.aurionpro.model;
 
 public class Board {
-    private Cell[] cells = new Cell[9];
+    private Cell[][] cells = new Cell[3][3];
     private MarkType startingMark = null;
     private MarkType lastMark = null;
     private int moveCount = 0;
 
     public Board() {
-        for (int i = 0; i < 9; i++) {
-            cells[i] = new Cell();
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                cells[i][j] = new Cell();
+            }
         }
     }
 
     public boolean isBoardFull() {
-        for (Cell cell : cells) {
-            if (cell.isEmpty()) {
-                return false;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (cells[i][j].isEmpty()) {
+                    return false;
+                }
             }
         }
         return true;
     }
 
-    public boolean setCellMark(int loc, MarkType mark) {
-        if (loc < 0 || loc >= 9) {
+    public boolean setCellMark(int row, int col, MarkType mark) {
+        if (row < 0 || row > 2 || col < 0 || col > 2) {
             return false;
         }
         
-        if (!cells[loc].isEmpty()) {
+        if (!cells[row][col].isEmpty()) {
             return false;
         }
 
@@ -37,7 +41,7 @@ public class Board {
                 return false;
             }
         }
-        cells[loc].setMark(mark);
+        cells[row][col].setMark(mark);
         lastMark = mark;
         moveCount++;
         return true;
@@ -45,8 +49,10 @@ public class Board {
     
     public int getMarkCount(MarkType mark) {
         int count = 0;
-        for (Cell cell : cells) {
-            if (cell.getMark() == mark) count++;
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (cells[i][j].getMark() == mark) count++;
+            }
         }
         return count;
     }
@@ -59,12 +65,12 @@ public class Board {
         return moveCount;
     }
     
-    public Cell[] getCells() {
+    public Cell[][] getCells() {
         return cells;
     }
     
-    public Cell getCell(int index) {
-        return cells[index];
+    public Cell getCell(int row, int col) {
+        return cells[row][col];
     }
     
     public boolean isSymbolCountValid() {
