@@ -15,10 +15,11 @@ public class Cell {
         return this.mark;
     }
 
-    public void setMark(MarkType mark) throws CellAlreadyMarkedException {
+    public boolean setMark(MarkType mark) {
         if (!isEmpty()) {
-            throw new CellAlreadyMarkedException("Cell is already marked.");
+            return false;
         }
         this.mark = mark;
+        return true;
     }
 }
