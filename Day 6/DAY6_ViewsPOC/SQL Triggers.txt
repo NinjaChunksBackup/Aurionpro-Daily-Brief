@@ -1,0 +1,56 @@
+SQL Triggers
+
+
+A trigger is a piece of code (like a mini program) that runs automatically in the database when a specific event happens on a table.
+
+You use triggers when you want something to happen automatically.
+
+Triggers are commonly used to maintain data integrity, track changes, and apply business rules automatically, without needing manual input.
+
+It belongs to a specific class of stored procedures that are automatically invoked in response to database server events. 
+
+Every trigger has a table attached to it.
+
+When to Use - 	For audit, backup, validation
+
+| Example Scenario            | What Trigger Can Do                   |
+| --------------------------- | ------------------------------------- |
+| When a student is inserted  | Automatically add an audit log        |
+| When a salary is updated    | Save the old value in a history table |
+| When a record is deleted    | Back it up to another table           |
+| When inserting invalid data | Prevent it or fix it automatically    |
+
+
+Types of SQL Triggers
+
+| Trigger Type    | When it runs                    | Example Use Case                      |
+| --------------- | ------------------------------- | ------------------------------------- |
+| `BEFORE INSERT` | Before a new row is added       | Set default values or validate data   |
+| `AFTER INSERT`  | After a new row is added        | Log who inserted the data             |
+| `BEFORE UPDATE` | Before existing data is changed | Check or modify data before updating  |
+| `AFTER UPDATE`  | After existing data is changed  | Track changes (audit log)             |
+| `BEFORE DELETE` | Before a row is deleted         | Prevent deletion if certain condition |
+| `AFTER DELETE`  | After a row is deleted          | Log what was deleted                  |
+
+
+Basic Syntax
+
+CREATE TRIGGER trigger_name
+{BEFORE | AFTER} {INSERT | UPDATE | DELETE}
+ON table_name
+FOR EACH ROW
+BEGIN
+   -- Your trigger logic here
+END;
+
+trigger_name: The name of the trigger to be created.
+
+BEFORE | AFTER: Specifies whether the trigger is fired before or after the triggering event (INSERT, UPDATE, DELETE).
+
+{INSERT | UPDATE | DELETE}: Specifies the operation that will activate the trigger.
+
+table_name: The name of the table the trigger is associated with.
+
+FOR EACH ROW: Indicates that the trigger is row-level, meaning it executes once for each affected row.
+
+trigger_body: The SQL statements to be executed when the trigger is fired.
