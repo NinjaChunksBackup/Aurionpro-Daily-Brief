@@ -1,0 +1,57 @@
+store procedure in sql
+
+A stored procedure is like a pre-written set of instructions stored in the database.
+You can use it whenever you want, instead of writing the same SQL code again and again.
+
+📌 Key Features of Stored Procedures:
+
+Stored in the database.
+
+Executed using the CALL or EXEC command.
+
+Can take input, output, or input-output parameters.
+
+Supports conditional logic (IF, CASE, WHILE).
+
+You can call or run it anytime to perform a task (like get data, insert something, update a table, etc.).
+
+syntax :
+
+DELIMITER //
+
+CREATE PROCEDURE procedure_name (IN param1 datatype, OUT param2 datatype)
+	BEGIN
+    		-- SQL statements
+	END //
+
+DELIMITER ;
+
+
+there are three parameters in stored procedure
+
+1 -> IN parameter
+	
+	You give a value to the procedure.
+
+	The procedure uses it, but doesn't return anything back.
+
+	 Example:
+		You tell the procedure:
+		“This is the student ID. Go find the student.”
+
+2 -> OUT parameter
+
+	You don’t give a value, but the procedure gives you something back.
+
+	 Example:
+		You tell the procedure:
+		“Tell me how many students are in the table.”
+
+3 -> INOUT parameter 
+
+	You give a value. The procedure changes it and gives it back.
+
+	 Example:
+	       You tell the procedure:
+	       “This number is 5. Please double it and return.”
+
