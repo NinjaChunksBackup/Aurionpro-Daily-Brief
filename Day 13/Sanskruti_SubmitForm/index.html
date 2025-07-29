@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Student Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Student Details Form </h2>
+  <form id="studentForm">
+    ID: <input type="text" id="id"><br>
+    First Name: <input type="text" id="fname"><br>
+    Last Name: <input type="text" id="lname"><br>
+    Email: <input type="text" id="email"><br>
+    <button type="submit">Submit Form</button>
+  </form>
+
+  <h2>Submitted Students List</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody id="studentTableBody"></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
