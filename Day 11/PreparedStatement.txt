@@ -1,0 +1,33 @@
+PreparedStatement
+
+
+A PreparedStatement is a precompiled SQL statement in Java that allows you to safely and efficiently execute parameterized queries.
+
+It's part of the JDBC API and is used when you want to execute the same SQL statement repeatedly with different values or when working with user input (to prevent SQL injection).
+
+
+Prevents SQL injection by separating data from code
+SQL is precompiled once and reused
+placeholders instead of building full SQL strings
+Supports setInt(), setString(), etc., for type safety
+Always replace dynamic values in SQL 
+
+
+1. You write SQL with placeholders `?` instead of actual values.
+2. JDBC compiles this SQL once (behind the scenes).
+3. You supply the values using `setX()` methods.
+4. JDBC sends the final query to the database securely.
+
+
+| Method                     | Used For                       |
+| -------------------------- | ------------------------------ |
+| `setString(index, value)`  | Text values like names, emails |
+| `setInt(index, value)`     | Integer values like age, IDs   |
+| `setDouble(index, value)`  | Decimal numbers like price     |
+| `setBoolean(index, value)` | true/false                     |
+
+
+| Type                | Description                                                             |
+| ------------------- | ----------------------------------------------------------------------- |
+| `Statement`         | Used to execute **static SQL** (no parameters), created once, run once  |
+| `PreparedStatement` | Used for **parameterized SQL** (with `?` placeholders), safe & reusable |
