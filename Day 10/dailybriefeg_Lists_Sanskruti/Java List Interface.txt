@@ -1,0 +1,97 @@
+Java List Interface
+
+The List Interface in Java extends the Collection Interface and is a part of the java.util package.
+
+It is used to store the ordered collections of elements.
+
+Allows duplicate elements.
+
+The implementation classes of the List interface are ArrayList, LinkedList, Stack, and Vector.
+
+Common Methods in List:
+
+| Method                      | Description                           |
+| --------------------------- | ------------------------------------- |
+| `add(E e)`                  | Adds an element to the list           |
+| `add(int index, E element)` | Inserts element at specified position |
+| `get(int index)`            | Returns element at specified index    |
+| `set(int index, E element)` | Replaces element at specified index   |
+| `remove(int index)`         | Removes element at specified index    |
+| `size()`                    | Returns number of elements            |
+| `contains(Object o)`        | Checks if list contains element       |
+| `isEmpty()`                 | Checks if list is empty               |
+| `clear()`                   | Removes all elements                  |
+| `indexOf(Object o)`         | Returns first index of element        |
+| `lastIndexOf(Object o)`     | Returns last index of element         |
+
+
+1. ArrayList
+
+Type: Resizable array (dynamic array).
+
+Use case: Fast access (get/set) when you don’t insert/remove often.
+
+Common Methods:
+
+add(E e)                     // Add element to end
+add(int index, E e)       // Add at specific index
+get(int index)            // Get element
+set(int index, E e)         // Replace element
+remove(int index)          // Remove by index
+size()                    // Number of elements
+clear()                  // Remove all elements
+
+
+2. LinkedList
+
+Type: Doubly-linked list.
+
+Use case: Good for frequent insert/delete operations.
+
+Implements List and Deque.
+
+Common Methods:
+
+add(E e)                      // Add at end
+addFirst(E e)                // Add at beginning
+addLast(E e)                  // Add at end
+remove() / removeFirst()      // Remove from beginning
+removeLast()                    // Remove from end
+get(int index)                 // Get element
+size()                     // Number of elements
+
+
+
+3. Stack
+
+Type: LIFO (Last-In-First-Out) stack.
+
+Use case: Undo, backtracking, expression evaluation.
+
+Common Methods:
+
+push(E e)     // Add (to top)
+pop()         // Remove and return top
+peek()        // Look at top (no remove)
+isEmpty()     // Check if stack is empty
+search(E e)   // Returns 1-based position
+
+
+4. Vector
+
+Type: Growable array, like ArrayList.
+
+Use case: Thread-safe alternative to ArrayList (synchronized).
+
+Common Methods:
+
+add(E e)          // Add element
+get(int index)    // Get element
+set(int index, E) // Replace
+remove(int index) // Remove by index
+size()            // Current size
+capacity()        // Total capacity
+
+
+
+https://youtu.be/CiJNOaFZT-4?si=Aw-uJOgQUGAGXG8S
