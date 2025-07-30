@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Example</title>
+  <style>
+    /* Universal selector */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f8ff;
+      
+    }
+  
+
+
+    h1 {
+      color: navy;
+      text-align: left;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: #333;
+      font-size: 18px;
+      line-height: 1.9;
+    }
+
+    .box {
+      background-color: #dff0d8;
+      border: 2px solid green;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+
+    #special {
+      color: red;
+      font-weight: bold;
+    }
+
+    a {
+      color: blue;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: green;
+      text-decoration: underline;
+    }
+
+    .list {
+      list-style-type: square;
+      margin-left: 130px;
+    }
+
+    .button {
+      background-color: orange;
+      color: white;
+      border: none;
+      padding: 10px 35px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .button:hover {
+      background-color: darkorange;
+      color: aqua;
+    }
+
+     .box1{
+  width: 100px;
+  height: 100px;
+  background-color: coral;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+
+.box1:hover {
+  transform: scale(1.2) rotate(10deg);
+  background-color: teal;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <h1>Welcome to CSS World</h1>
+
+  <p>This paragraph is styled using CSS. It uses font size, color, and line height.</p>
+
+  <div class="box">
+    This is a styled box using <code>.box</code> class with background, border, padding, and rounded corners.
+  </div>
+
+  <p id="special">This text is styled using an ID selector (#special).</p>
+
+  <a href="https://www.google.com" target="_blank">Visit Google</a>
+
+  <h3>Topics:</h3>
+  <ul class="list">
+    <li>Selectors</li>
+    <li>Colors</li>
+    <li>Fonts</li>
+    <li>Borders</li>
+    <li>Hover Effects</li>
+  </ul>
+
+  <button class="button">Click Me</button>
+
+ <div>
+     <img src="cat.jpg" alt="" class="box1" width="200px" height="200px">
+ </div>
+
+</body>
+</html>
