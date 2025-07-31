@@ -1,0 +1,111 @@
+Method Chaining
+
+Method chaining means calling multiple methods one after another on the same array (or object), where the output of one method is passed to the next.
+
+All the array methods work on arrays and return arrays.
+
+array.method1().method2().method3();
+
+
+| Method       | What it does                        |
+| ------------ | ----------------------------------- |
+| `.filter()`  | Filters values based on a condition |
+| `.map()`     | Transforms each value in the array  |
+| `.forEach()` | Loops over each value (no return)   |
+| `.reduce()`  | Combines all values into one result |
+| `.sort()`    | Sorts the array                     |
+
+Date and Time(Date constructor, Timestamp and comparison, converting timestamp to Date object)
+
+Date Object 
+
+The Date object in JavaScript is used to work with dates and times. It internally stores time in milliseconds since January 1, 1970, 
+
+| Syntax                   | What it does                                             |
+| ------------------------ | -------------------------------------------------------- |
+| `new Date()`             | Current date and time                                    |
+| `new Date("2025-07-30")` | Specific date (string format)                            |
+| `new Date(2025, 6, 30)`  | Specific date (year, monthIndex, day) → month is 0-based |
+| `new Date(timestamp)`    | Create date from a timestamp                             |
+
+
+Timestamps 
+
+A timestamp is the number of milliseconds that have passed since 01 Jan 1970
+
+Use timestamps when you want to compare dates numerically
+
+
+Comparing Dates
+
+Since dates are stored as numbers (timestamps), you can compare them like numbers:
+
+const d1 = new Date("2020-01-01");
+const d2 = new Date("2025-01-01");
+
+console.log(d1 < d2);         // true
+console.log(d1.getTime() === d2.getTime()); // false
+
+
+Converting Timestamp to Date
+
+Sometimes you receive a timestamp (e.g., from a database or API). You can convert it back to a readable date like this:
+
+const timestamp = 1577836800000;
+const date = new Date(timestamp);
+console.log(date.toString());                          // "Wed Jan 01 2020 ..."
+
+
+
+| Method          | Description                |
+| --------------- | -------------------------- |
+| `getFullYear()` | Returns year               |
+| `getMonth()`    | Returns 0–11 (Jan is 0)    |
+| `getDate()`     | Day of the month (1–31)    |
+| `getDay()`      | Day of week (0–6, Sun = 0) |
+| `getHours()`    | Hour (0–23)                |
+| `getMinutes()`  | Minutes (0–59)             |
+| `getSeconds()`  | Seconds (0–59)             |
+| `getTime()`     | Timestamp in milliseconds  |
+
+
+
+
+| Feature           | `Date` Object                                         | `Timestamp` (Number)                                          |
+| ----------------- | ----------------------------------------------------- | ------------------------------------------------------------- |
+|  Definition       | A **JavaScript object** for handling date and time    | A **number** representing milliseconds since Jan 1, 1970 UTC  |
+|   Type            | Object                                                | Number                                                        |
+|  Human-readable   | Yes (e.g., `Wed Jul 30 2025 14:00:00`)                | No (e.g., `1753893600000`)                                    |
+|  Created using    | `new Date()`                                          | `Date.now()` or `date.getTime()`                              |
+|  Use Case         | Used when you want to manipulate or display date/time | Used for **storing, comparing, calculating** time differences |
+|  Format Output    | `.toString()`, `.toLocaleDateString()`                | Just a number                                                 |
+
+
+You can always convert between them:
+
+Date → Timestamp: date.getTime()
+
+Timestamp → Date: new Date(timestamp)
+
+
+date-fns
+
+date-fns (Date Functions) is a lightweight and modular library that helps you handle dates and times in JavaScript more easily than using the built-in Date object alone.
+
+Date-fns is a modern JavaScript utility library for manipulating and formatting dates in both browser and Node.js environments.
+
+
+Pure functions (no mutation)
+
+Simple, consistent API
+
+No timezone issues like moment.js
+
+
+| Function                   | What it Does                       | Example                                         |
+| -------------------------- | ---------------------------------- | ----------------------------------------------- |
+| `format()`                 | Format a date into readable string | `format(new Date(), 'yyyy-MM-dd')`              |
+| `addDays()`                | Add days to a date                 | `addDays(new Date(), 5)`                        |
+| `differenceInDays()`       | Days between two dates             | `differenceInDays(date1, date2)`                |
+| `isBefore()` / `isAfter()` | Compare two dates                  | `isBefore(date1, date2)`                        |
+| `parse()`                  | Convert string to date             | `parse('2025-07-30', 'yyyy-MM-dd', new Date())` |
