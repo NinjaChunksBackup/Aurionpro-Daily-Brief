@@ -124,3 +124,21 @@
 
 // let participant = ["suraj","viraj","sahil","asfs","sfsf","sfsf"];
 // let [winner,second,third,...others] = participant;
+
+
+// const student = {
+//     name: "karan",
+//     age: 24,
+//     username:"abc",
+//     pass : "adf",
+//     subs: ["hindi","eng","marathi"]
+// };
+
+//let {username,pass,name} = student;
+
+// let{user} = student; // user - undefined
+
+// let{username: userN} = student; // username - undefined , userN - abc 
+
+// let {name,city = "mumbai"}  = student; // city mumbai if city is not present in object
+
