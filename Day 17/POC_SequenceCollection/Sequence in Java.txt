@@ -1,0 +1,80 @@
+Sequence in Java
+
+A Sequence means a collection of elements where the order matters.
+
+You can access elements in a specific order (like 1st, 2nd, 3rd...).
+
+You can add, get, remove, or iterate over items in that order.
+
+
+he most common sequence-based collections are:
+
+List (main one)
+
+Queue
+
+Deque (Double-ended Queue)
+
+Most used class:
+
+ArrayList (implements List)
+
+LinkedList (implements List, Queue, and Deque)
+
+
+| Method                | Description                    |
+| --------------------- | ------------------------------ |
+| `add(E e)`            | Adds element to the end        |
+| `add(int index, E e)` | Adds element at specific index |
+| `get(int index)`      | Gets element at index          |
+| `remove(int index)`   | Removes element at index       |
+| `size()`              | Returns number of elements     |
+| `contains(E e)`       | Checks if element exists       |
+| `clear()`             | Removes all elements           |
+| `isEmpty()`           | Checks if list is empty        |
+| `for-each loop`       | Used to iterate through items  |
+
+
+Locks and Deadlocks in Java Multithreading
+
+
+Multithreading = running multiple tasks (threads) at the same time within a single program.
+
+When multiple threads try to access the same shared data, we need to control their access. Otherwise, you get inconsistent data.
+
+Only one thread can enter at a time. Others must wait.
+
+
+Types 
+
+synchronized block or method – built-in locking
+
+ReentrantLock – advanced, more flexible locking
+Supports tryLock()
+
+Can interrupt a waiting thread
+
+Better for complex synchronization
+timeouts, interrupts, or multiple conditions
+
+
+Deadlock = Two or more threads are waiting forever for each other to release locks.
+
+
+Deadlock needs 4 conditions:
+
+Mutual Exclusion – only one thread can use a resource
+
+Hold and Wait – thread holds one lock and waits for another
+
+No Preemption – lock can't be forcibly taken
+
+Circular Wait – thread A waits for B, B waits for A (or C...A)
+
+
+
+Thread 1 locks Resource A, then wants B
+
+Thread 2 locks Resource B, then wants A
+
+Lock in the same order (A → B in both threads)
